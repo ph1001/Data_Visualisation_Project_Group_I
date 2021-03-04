@@ -1,0 +1,2 @@
+https://api.gdeltproject.org/api/v2/coviddash/coviddash
+https://api.gdeltproject.org/api/v2/summary/summary?d=iatv
