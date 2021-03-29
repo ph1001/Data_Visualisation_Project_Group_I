@@ -129,10 +129,11 @@ dmypy.json
 .pyre/
 
 # Don't sync CSV or XLSX files
-*.csv
+#*.csv
 
 # Ignore temporary files produced my MacOS (.DS_Store)
 .DS_Store
 
 # Ignore temporary Word files
 *~$*
+Dashboard/Processed data for plotting/Henrique/LA_Crime_HV.csv
