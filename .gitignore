@@ -136,3 +136,4 @@ dmypy.json
 
 # Ignore temporary Word files
 *~$*
+Dashboard/Processed data for plotting/Henrique/LA_Crime_HV.csv
