@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Don't sync CSV or XLSX files
-*.csv
+#*.csv
 
 # Ignore temporary files produced my MacOS (.DS_Store)
 .DS_Store
