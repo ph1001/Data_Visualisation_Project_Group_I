@@ -105,7 +105,7 @@ def crimes_occured_delta(data, year):
             mode = "number",
             value = crimes_occur_selected,
             number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
-            title = {'text': f"Number of Committed Crimes in {year}<br><br><span style='font-size:2.5em;color:white'>{year}</span>"}
+            title = {'text': f"Number of Committed Crimes in {year}"}
             ))
         fig.update_layout(autosize=False, width=size_fr, height=size_fr)
 
