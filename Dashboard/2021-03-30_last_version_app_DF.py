@@ -12,7 +12,7 @@ victim_donut_data = pd.read_csv('data/victims_donut_data.csv', index_col = 0)
 pop_area_count = pd.read_csv('data/pop_area_count.csv', index_col = 0)
 crime_bar = pd.read_csv('data/la_crime_data.csv')
 crime_type = pd.read_csv('data/crime_type.csv', index_col = 0)
-crimeAreaDF = pd.read_csv('data/crimeDate_crimeTypes.csv', index_col = 0)
+#crimeAreaDF = pd.read_csv('data/crimeDate_crimeTypes.csv', index_col = 0)
 pop_data = pd.read_csv('data/Population_HV.csv')
 
 crime_type['Date'] = pd.to_datetime(crime_type.Date)
@@ -86,7 +86,7 @@ def most_affected_area(data, year):
     fig.add_trace(go.Indicator(
         mode = "number",
         value = crimes_occured_most,
-        number={"font":{"size":40}},
+        number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
         title = {"text": f"Area with the highest number<br>of crimes in {year_selected}<br><br><span style='font-size:1.8em;color:gray'>{most_affected_area}</span>"}
     ))
     fig.update_layout(autosize=False, width=size_fr, height=size_fr)
@@ -104,12 +104,9 @@ def crimes_occured_delta(data, year):
         fig.add_trace(go.Indicator(
             mode = "number",
             value = crimes_occur_selected,
-            number={"font":{"size":40}}
+            number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
+            title = {'text': f"Number of Committed Crimes in {year}<br><br><span style='font-size:2.5em;color:white'>{year}</span>"}
             ))
-        fig.update_layout(
-            template = {'data' : {'indicator': [{
-                'title': {'text': f"Number of Committed Crimes in {year}"}
-                }]}})
         fig.update_layout(autosize=False, width=size_fr, height=size_fr)
 
 
@@ -122,11 +119,11 @@ def crimes_occured_delta(data, year):
         fig.add_trace(go.Indicator(
             mode = "number+delta",
             value = crimes_occur_selected,
-            number={"font":{"size":40}}
+            number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
+            title = {'text': f"Number of Committed Crimes in {year}<br>compared to previuos year"}
             ))
         fig.update_layout(
             template = {'data' : {'indicator': [{
-                'title': {'text': f"Number of Committed Crimes in {year}<br>compared to previuos year"},
                 'delta' : {'reference': crimes_occur_bf_selected,
                         'decreasing.color' : 'green',
                         'increasing.color' : 'red'}}]
@@ -151,7 +148,7 @@ def least_affected_area(data, year):
     fig.add_trace(go.Indicator(
         mode = "number",
         value = crimes_occured_most,
-        number={"font":{"size":40}},
+        number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
         title = {"text": f"Area with the lowest number<br>of crimes in {year_selected}<br><br><span style='font-size:1.8em;color:gray'>{most_affected_area}</span>"}
     ))
     fig.update_layout(autosize=False, width=size_fr, height=size_fr)
@@ -173,7 +170,7 @@ def most_affected_year(data, area):
     fig.add_trace(go.Indicator(
         mode = "number",
         value = int(crimes_occured_most_year),
-        number={"font":{"size":40}},
+        number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
         title = {"text": f"Year with highest number<br> of crimes in {area_selected}<br><br><span style='font-size:1.8em;color:gray'>{most_affected_year}</span>"}
         ))
     
@@ -193,7 +190,7 @@ def population_percentage(data, area):
     fig.add_trace(go.Indicator(
         mode = "number",
         value = int(selected_area_popu),
-        number={"font":{"size":40}},
+        number={"font":{"size":40, "color":"rgb(246, 51, 102)"}},
         domain = {'row': 0, 'column': 1},
         title = {"text": f"{area} population compared to<br>total Los Angeles population <br><br><span style='font-size:1.8em;color:gray'>{selected_area_percent_popu}</span><br>"}
         ))
